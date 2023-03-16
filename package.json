@@ -1,0 +1,23 @@
+{
+  "name": "forkify",
+  "version": "1.0.0",
+  "description": "recipe app",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Muratozbk/18-forkify.git"
+  },
+  "author": "murat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Muratozbk/18-forkify/issues"
+  },
+  "homepage": "https://github.com/Muratozbk/18-forkify#readme",
+  "devDependencies": {
+    "@parcel/transformer-sass": "^2.8.3",
+    "parcel": "^2.8.3"
+  }
+}
