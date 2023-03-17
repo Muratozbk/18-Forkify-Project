@@ -12,6 +12,7 @@ const timeout = function (s) {
   });
 };
 
+
 // https://forkify-api.herokuapp.com/v2
 
 ///////////////////////////////////////
@@ -26,16 +27,20 @@ const renderSpinner = function (parentEl) {
   parentEl.innerHTML = '';
   parentEl.insertAdjacentHTML('afterbegin', markup)
 }
-
 /* <href="src/img/icons.svg#icon-loader">*/
 
 // Fetch Api
 const showRecipe = async function () {
   try {
+    const id = window.location.hash.slice(1);
+    console.log(id)
+
+    if (!id) return;
+
     renderSpinner(recipeContainer)
     // 1)Loading Recipe
     const res = await fetch(
-      'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc886'
+      `https://forkify-api.herokuapp.com/api/v2/recipes/${id}`
       // 'https://forkify-api.herokuapp.com/api/v2/recipes/5ed6604591c37cdc054bc8fd'
     );
     const data = await res.json();
@@ -147,5 +152,8 @@ const showRecipe = async function () {
     recipeContainer.insertAdjacentHTML('afterbegin', markup)
   } catch (err) { console.error(err) }
 };
-showRecipe();
 
+['hashchange', 'load'].forEach(ev =>
+  window.addEventListener(ev, showRecipe));
+// window.addEventListener('hashchange', showRecipe);
+// window.addEventListener('load', showRecipe)
