@@ -1,7 +1,7 @@
 import * as model from './demoModel.js'
 import 'core-js/stable';
 import 'regenerator-runtime/runtime';
-import recipeView from './src/js/views/recipeView.js';
+import recipeView from './demoView.js';
 
 const recipeContainer = document.querySelector('.recipe');
 

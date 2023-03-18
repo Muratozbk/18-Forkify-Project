@@ -1,37 +1,36 @@
 // import icons from '../img/icons.svg';//parcel 1
 import icons from 'url:../../img/icons.svg';//parcel 2
 import { Fraction } from 'fractional';
-console.log(Fraction)
 
 class RecipeView {
-    #parentEl = document.querySelector('.recipe');
-    #data;
+  #parentEl = document.querySelector('.recipe');
+  #data;
 
-    render(data) {
-        this.#data = data;
-        const markup = this.#generateMarkup();
-        this.#clear();
-        this.#parentEl.insertAdjacentHTML('afterbegin', markup)
-    }
+  render(data) {
+    this.#data = data;
+    const markup = this.#generateMarkup();
+    this.#clear();
+    this.#parentEl.insertAdjacentHTML('afterbegin', markup)
+  }
 
-    #clear() {
-        this.#parentEl.innerHTML = '';
-    };
+  #clear() {
+    this.#parentEl.innerHTML = '';
+  };
 
-    renderSpinner = function () {
-        const markup = `
+  renderSpinner = function () {
+    const markup = `
         <div class="spinner">
                 <svg>
                   <use href="${icons}#icon-loader"></use>        
                 </svg>
               </div>
         `;
-        this.#parentEl.innerHTML = '';
-        this.#parentEl.insertAdjacentHTML('afterbegin', markup)
-    };
+    this.#parentEl.innerHTML = '';
+    this.#parentEl.insertAdjacentHTML('afterbegin', markup)
+  };
 
-    #generateMarkup() {
-        return `
+  #generateMarkup() {
+    return `
         <figure class="recipe__fig">
             <img src="${this.#data.image}" alt="${this.#data.title}" class="recipe__img" />
             <h1 class="recipe__title">
@@ -104,9 +103,9 @@ class RecipeView {
           </div>
           `;
 
-    }
-    #generateMarkupIngredient(ing) {
-        return `
+  }
+  #generateMarkupIngredient(ing) {
+    return `
           <li class="recipe__ingredient">
             <svg class="recipe__icon">
               <use href="${icons}#icon-check"></use>
@@ -118,7 +117,7 @@ class RecipeView {
             </div>
         </li>
           `;
-    }
+  }
 }
 
 export default new RecipeView();
