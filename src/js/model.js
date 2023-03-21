@@ -75,3 +75,5 @@ export const updateServings = function (newServings) {
     });
     state.recipe.servings = newServings;
 }
+
+// 302-6:00
