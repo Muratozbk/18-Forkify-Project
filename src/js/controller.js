@@ -15,7 +15,7 @@ import { async } from 'regenerator-runtime';
 //   module.hot.accept();
 // }
 // https://forkify-api.herokuapp.com/v2
-
+console.log('hello')
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
